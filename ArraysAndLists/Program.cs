@@ -1,32 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArraysAndLists
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            //TODO:
+            int[] arr = new int [] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            // Create an int Array and populate numbers 1-10
+            List<int> evens = new List<int>();
+            List<int> odds = new List<int>();
 
-            /* Create two Lists of type int.
-             * Name one List "evens"
-             * Name the other List "odds"
-             */
+            int i, e = 0, o = 0;
 
-            /* Using either a foreach or for loop,
-             * nest an if statement to check to see
-             *  if a number is even or odd.
-             * Then add those numbers to either the evens List
-             * or the odds List
-             */
+             for(i= 0; i <= 9; i++)
+            {
+                if (arr[i] % 2 == 0) {
 
-            /* Now using foeach or for loops,
-             * display each List of even and odd numbers
-             *
-             * Try to be creative in your display
-             */
-        }
+                    evens.Add(arr[i]);
+                    e++;
+                } else {
+                    odds.Add(arr[i]);
+                    o++;
+                }
+            }
+
+            Console.WriteLine("Even Numbers: ");
+            for (i = 0; i < e; i++)
+            {
+                Console.WriteLine(evens[i]);
+            }
+
+            Console.WriteLine("Odd Numbers: ");
+            for (i = 0; i < o; i++)
+            {
+                Console.WriteLine(odds[i]);
+            }
+        }   
+
     }
 }
